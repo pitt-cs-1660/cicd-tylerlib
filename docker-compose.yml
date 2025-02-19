@@ -1,16 +1,25 @@
 services:
   fastapi:
     ### Add build context instruction here
+    build: 
+      context: .
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://127.0.0.1:8000/healthz || (echo 'Healthcheck failed' && exit 1)"]
       interval: 10s
       timeout: 60s
       retries: 5
     ### Add environment variables here
-
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgrespassword
+      POSTGRES_DB: tasksdb
     ### Add depends postgres here
+    depends_on: 
+      - postgres
 
     ### expose ports here
+    ports:
+      - "8000:8000"
     volumes:
       - ./cc_compose:/app/cc_compose:Z
       - ./static:/app/static:Z
