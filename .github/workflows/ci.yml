@@ -94,4 +94,4 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: us-east5-docker.pkg.dev/cs1660-tcl27/assignment2
+          tags: us-east5-docker.pkg.dev/cs1660-tcl27/assignment2:v2
