@@ -10,7 +10,12 @@ COPY poetry.lock ./
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-root --no-interaction --no-ansi
 
-COPY . .
+
+COPY /cc_compose /cc_compose
+
+COPY /static /static
+
+COPY entrypoint.sh entrypoint.sh
 
 FROM python:3.11-buster AS app
 
