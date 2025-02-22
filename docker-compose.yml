@@ -10,9 +10,7 @@ services:
       retries: 5
     ### Add environment variables here
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgrespassword
-      POSTGRES_DB: tasksdb
+      - DATABASE_URL=postgresql://postgres:postgrespassword@postgres:5432/tasksdb
     ### Add depends postgres here
     depends_on: 
       - postgres
