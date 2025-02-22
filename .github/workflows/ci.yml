@@ -76,7 +76,7 @@ jobs:
         with:
           project_id: 'cs1660-tcl27' # update with your project ID
           service_account: 'my-service-account@cs1660-tcl27.iam.gserviceaccount.com'
-          workload_identity_provider: 'projects/39013025664/locations/global/workloadIdentityPools/github/providers/my-repo' # update with your Workload Identity Pool
+          workload_identity_provider: 'projects/39013025664/locations/global/workloadIdentityPools/github/providers/tylib' # update with your Workload Identity Pool
 
 #      # configure/login with docker
       - name: gcloud Configure Docker
@@ -95,4 +95,4 @@ jobs:
           context: ./
           file: ./Dockerfile
           push: true
-          tags: us-east5-docker.pkg.dev/cs1660-tcl27/fastapi:latest
+          tags: us-east5-docker.pkg.dev/cs1660-tcl27/fastapi
